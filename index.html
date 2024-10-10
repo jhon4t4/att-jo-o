@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de CSS</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            font-family: 'Courier New', Courier, monospace; /* Fonte estilo pixel */
+            border-radius: 5px; /* Bordas arredondadas para o contêiner */
+        }
+
+        .piscar {
+            animation: piscar 1s infinite;
+        }
+
+        @keyframes piscar {
+            0% { color: red; }
+            50% { color: orange; }
+            100% { color: red; }
+        }
+
+        /* Estilo do retângulo */
+        .pixel {
+            width: 300px;
+            height: 100px;
+            background: #000;
+            position: absolute;
+            top: -10px; /* Ajusta a posição do retângulo */
+            left: -10px;
+            z-index: -1; /* Fica atrás do texto */
+            border: 10px solid; /* Espessura da borda */
+            border-radius: 5px; /* Bordas arredondadas para o retângulo */
+            animation: bordaPulsar 2s linear infinite; /* Animação das bordas */
+        }
+
+        @keyframes bordaPulsar {
+            0% { border-color: blue; }
+            14% { border-color: red; }
+            28% { border-color: pink; }
+            42% { border-color: orange; }
+            57% { border-color: green; }
+            71% { border-color: cyan; }
+            85% { border-color: yellow; }
+            100% { border-color: blue; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pixel"></div>
+        <h1 class="piscar">KOLE PROFESSOR</h1>
+        <p>Nome: Jhonata Italo</p>
+        <p>RA: 62310147</p>
+        <p>Curso: Ciência da Computação</p>
+    </div>
+
+    <script>
+        document.querySelector('h1').classList.add('piscar');
+    </script>
+</body>
+</html>
